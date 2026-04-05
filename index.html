@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Clone Maker - まりちゃん専用</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>✨ Blog Clone Maker</h1>
+            <p>アメブロのトップ URL から全記事を取得し、CSV（タイトル・URL）とテキスト（本文）をダウンロードできます</p>
+            <div id="serverBanner" class="server-banner server-banner--checking" role="status">
+                サーバーへの接続を確認しています…
+            </div>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <input type="url" id="blogUrl" placeholder="https://ameblo.jp/your-blog-id/" required autocomplete="url">
+                <p id="urlError" class="url-error" role="alert" hidden>アメブロのトップページURLを入力してください ✨</p>
+                <button type="button" id="startBtn" disabled>分析を開始する</button>
+            </div>
+
+            <div id="status" class="status-message"></div>
+
+            <div id="progressPanel" class="progress-panel hidden" aria-live="polite">
+                <div id="progressMessage" class="progress-message"></div>
+                <div id="progressBarWrap" class="progress-bar-wrap">
+                    <div id="progressBarFill" class="progress-bar-fill"></div>
+                </div>
+                <div id="progressSub" class="progress-sub"></div>
+            </div>
+
+            <div id="resultSection" class="result-section hidden">
+                <h2>🎁 書き出し結果</h2>
+                <textarea id="outputPrompt" readonly></textarea>
+                <div id="downloadArea" class="download-area"></div>
+                <button type="button" id="copyBtn">メッセージをコピー</button>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

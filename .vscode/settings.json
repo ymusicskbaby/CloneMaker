@@ -1,0 +1,7 @@
+{
+  "liveServer.settings.ignoreFiles": [
+    "exports/**",
+    "**/exports/**",
+    "**/.job_*.json"
+  ]
+}
